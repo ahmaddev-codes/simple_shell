@@ -34,7 +34,7 @@ $./shell
 $
 ```
 
-Alternatively, if command line arguments are supplied upon invocation, **shell** treats the first argument as a file from which to read commands. The supplied file should contain one command per line. **Shellby** runs each of the commands contained in the file in order before exiting.
+Alternatively, if command line arguments are supplied upon invocation, **shell** treats the first argument as a file from which to read commands. The supplied file should contain one command per line. **Shell** runs each of the commands contained in the file in order before exiting.
 
 Example:
 ```
@@ -83,7 +83,7 @@ $ echo "echo $PATH" | ./shell
 
 ### Command Execution :hocho:
 
-After receiving a command, **shellby** tokenizes it into words using `" "` as a delimiter. The first word is considered the command and all remaining words are considered arguments to that command. **Shell** then proceeds with the following actions:
+After receiving a command, **shell** tokenizes it into words using `" "` as a delimiter. The first word is considered the command and all remaining words are considered arguments to that command. **Shell** then proceeds with the following actions:
 1. If the first character of the command is neither a slash (`\`) nor dot (`.`), the shell searches for it in the list of shell builtins. If there exists a builtin by that name, the builtin is invoked.
 2. If the first character of the command is none of a slash (`\`), dot (`.`), nor builtin, **shellby** searches each element of the **PATH** environmental variable for a directory containing an executable file by that name.
 3. If the first character of the command is a slash (`\`) or dot (`.`) or either of the above searches was successful, the shell executes the named program with any remaining given arguments in a separate execution environment.
